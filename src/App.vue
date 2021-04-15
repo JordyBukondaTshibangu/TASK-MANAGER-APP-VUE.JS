@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <Header title="hello world"/>
+    <AddTask @add-task="addTask"/>
     <Tasks 
         :tasks="tasks" 
         @delete-task="deleteTask"
         @toggle-reminder="toggleReminder"
-        />
+    />
   </div>
 </template>
 
@@ -13,12 +14,14 @@
 
 import Header from './components/Header.vue';
 import Tasks from './components/Tasks';
+import AddTask from '@/components/AddTask';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Tasks,
+    AddTask,
   },
   data(){
     return {
@@ -48,15 +51,19 @@ export default {
     ]
   },
   methods : {
-    deleteTask(id){
-      if(confirm('Are you sure ?')) this.tasks = this.tasks.filter(task => task.id !== id)
+    addTask(task){
+      this.tasks = [...this.tasks, task]
     },
     toggleReminder(id){
        this.tasks = this.tasks.filter(task => {
          if(task.id === id)  task.reminder = !task.reminder
          return task
        })
+    },
+    deleteTask(id){
+      if(confirm('Are you sure ?')) this.tasks = this.tasks.filter(task => task.id !== id)
     }
+
   }
 }
 </script>
