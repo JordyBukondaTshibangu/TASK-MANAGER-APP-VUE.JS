@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <Header title="hello world"/>
-    <AddTask @add-task="addTask"/>
+    <Header title="Task Manager" @show-task="showAddTaskForm"/>
+    <div v-show="showAddTask">
+      <AddTask @add-task="addTask"/>
+    </div>
     <Tasks 
         :tasks="tasks" 
         @delete-task="deleteTask"
@@ -25,7 +27,8 @@ export default {
   },
   data(){
     return {
-      tasks : []
+      tasks : [],
+      showAddTask : false
     }
   },
   created(){
@@ -51,6 +54,9 @@ export default {
     ]
   },
   methods : {
+    showAddTaskForm(){
+        this.showAddTask = !this.showAddTask
+    },
     addTask(task){
       this.tasks = [...this.tasks, task]
     },

@@ -1,5 +1,11 @@
 <template>
-    <button :style="{background : color}" class="btn">{{text}}</button>
+    <button 
+        :style="{background : color}" 
+        class="btn"
+        @click="$emit('show-task')"
+        >
+        {{text}}
+    </button>
 </template>
 <script>
 export default {

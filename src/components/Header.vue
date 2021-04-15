@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1>{{title}}</h1>
-        <Button text="Add Task" color="green"/>
+        <Button text="Add Task" color="green" @show-task="$emit('show-task')"/>
     </header>
 </template>
 
@@ -19,6 +19,8 @@ export default {
             type : String,
             default : "Task Manager app"
         }
+    },
+    methods : {
     }
 }
 </script>
