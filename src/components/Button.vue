@@ -2,7 +2,6 @@
     <button 
         :style="{background : color}" 
         class="btn"
-        @click="$emit('show-task')"
         >
         {{text}}
     </button>

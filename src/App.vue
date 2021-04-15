@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header title="Task Manager" @show-task="showAddTaskForm"/>
+    <Header title="Task Manager" @show-task="showAddTaskForm" :showAddTask="showAddTask"/>
     <div v-show="showAddTask">
       <AddTask @add-task="addTask"/>
     </div>

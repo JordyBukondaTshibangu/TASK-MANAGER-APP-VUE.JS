@@ -1,7 +1,10 @@
 <template>
     <header>
         <h1>{{title}}</h1>
-        <Button text="Add Task" color="green" @show-task="$emit('show-task')"/>
+        <Button 
+            :text="!showAddTask ? 'Add task' : 'close'" 
+            :color="!showAddTask ? '#00e600' : 'lightgray'" 
+            @click="$emit('show-task')"/>
     </header>
 </template>
 
@@ -18,7 +21,8 @@ export default {
         title : {
             type : String,
             default : "Task Manager app"
-        }
+        },
+        showAddTask : Boolean
     },
     methods : {
     }
