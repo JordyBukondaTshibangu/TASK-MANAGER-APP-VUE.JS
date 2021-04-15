@@ -1,22 +1,22 @@
 {
-    "tasks" : [
-        {
-            "id" : 1,
-            "text" : "Meeting at school",
-            "day" : "21st April 2021",
-            "reminder" : true
-        },
-        {
-            "id" : 2,
-            "text" : "Meeting at Church",
-            "day" : "25st April 2021",
-            "reminder" : false
-        },
-        {
-            "id" : 3,
-            "text" : "Go to the gym",
-            "day" : "everyday",
-            "reminder" : true
-        }
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Meeting at school",
+      "day": "21st April 2021",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Meeting at Church",
+      "day": "25st April 2021",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Go to the gym",
+      "day": "everyday",
+      "reminder": true
+    }
+  ]
 }
