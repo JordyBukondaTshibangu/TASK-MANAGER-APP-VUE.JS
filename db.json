@@ -17,6 +17,18 @@
       "text": "Go to the gym",
       "day": "everyday",
       "reminder": true
+    },
+    {
+      "text": "Go to shoprite",
+      "day": "Tomorrow morning",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Eat some breakfastni",
+      "day": "Everyday",
+      "reminder": false,
+      "id": 5
     }
   ]
 }
