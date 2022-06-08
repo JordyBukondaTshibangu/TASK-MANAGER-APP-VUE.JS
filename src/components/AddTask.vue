@@ -1,12 +1,8 @@
 <template>
-     <form @submit="handleNewTask" class="add-form">
+  <form @submit="handleNewTask" class="add-form">
     <div class="form-control">
       <label>Task</label>
-      <input 
-        type="text" 
-        v-model="text"  
-        name="text" 
-        placeholder="Add Task" />
+      <input type="text" v-model="text" name="text" placeholder="Add Task" />
     </div>
     <div class="form-control">
       <label>Day & Time</label>
@@ -27,36 +23,36 @@
 
 <script>
 export default {
-    name : 'AddTask',
-    data(){
-        return {
-            text : '',
-            day : '',
-            reminder : false
-        }
+  name: "AddTask",
+  data() {
+    return {
+      text: "",
+      day: "",
+      reminder: false,
+    };
+  },
+  methods: {
+    handleNewTask(event) {
+      event.preventDefault();
+      if (!this.text) {
+        alert("Please enter text in your task");
+        return;
+      }
+
+      const newTask = {
+        text: this.text,
+        day: this.day,
+        reminder: this.reminder,
+      };
+
+      this.$emit("add-task", newTask);
+
+      this.text = "";
+      this.day = "";
+      this.reminder = false;
     },
-    methods : {
-        handleNewTask(event){
-            event.preventDefault();
-            if(!this.text){
-                alert("Please enter text in your task");
-                return;
-            }
-             
-            const newTask = {
-                text : this.text,
-                day : this.day,
-                reminder : this.reminder
-            }
-
-            this.$emit('add-task', newTask);
-
-            this.text = "";
-            this.day = "";
-            this.reminder = false
-        }
-    }
-}
+  },
+};
 </script>
 <style scoped>
 .add-form {
